@@ -23,7 +23,7 @@
 ## ☐ 阶段 0：基建
 
 - [x] 建立项目目录结构（`src/` 挖掘工具、`engine/` DPI 引擎、`data/`、`rules/`、`docs/`）
-- [~] 版本管理：`.gitignore` 已就绪；`git init` 待装 git（本机暂无 git）后执行
+- [x] 版本管理：git init + 首次提交已完成（WSL Ubuntu-22.04，`51bbbf2`）
 - [x] 确定技术栈与依赖（见 `requirements.txt` + `docs/架构设计.md` §5）
 - [x] 数据 pipeline 设计：PCAP → 会话重组 → 特征入库（`src/feature_miner/pipeline.py` 骨架 + 架构文档 §3）
 - [ ] 自建**社交应用分类**标注数据集（社交类：微信/WhatsApp/Telegram 等 + 非社交噪声样本）——抓包需真机/热点环境，参考 `scripts/抓包说明.md`

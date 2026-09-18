@@ -12,9 +12,9 @@ cd "$(dirname "$0")/.."
 echo "==> 使用 $(python3 --version) / $(git --version)"
 echo "==> 创建 venv (.venv)"
 python3 -m venv .venv
-echo "==> 升级 pip 并安装依赖"
-.venv/bin/python -m pip install --upgrade pip
-.venv/bin/pip install -r requirements.txt
+echo "==> 升级 pip 并安装依赖（走清华镜像，网络不稳时更稳）"
+.venv/bin/python -m pip install --upgrade pip -i https://pypi.tuna.tsinghua.edu.cn/simple --timeout 60 --retries 5
+.venv/bin/pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple --timeout 60 --retries 5
 
 if [[ "${1:-}" != "--no-git" ]]; then
   if [ ! -d .git ]; then
@@ -32,4 +32,6 @@ if [[ "${1:-}" != "--no-git" ]]; then
   fi
 fi
 
+echo "==> 验证依赖可导入"
+.venv/bin/python -c "import scapy, numpy, pandas, sklearn; print('导入 OK:', scapy.__version__, numpy.__version__, pandas.__version__, sklearn.__version__)"
 echo "==> ✅ 环境就绪。激活 venv： source .venv/bin/activate"
