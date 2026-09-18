@@ -1,0 +1,21 @@
+# ---- 解析与抓包 ----
+# scapy 用于 PCAP 解析、TCP 流重组、TLS 指纹
+scapy>=2.5.0
+# pyshark 可选：tshark 封装解析（需系统装有 tshark）
+# pyshark>=0.6
+
+# ---- 数值与特征工程 ----
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+
+# ---- 智能分析与建模 ----
+scikit-learn>=1.4        # 特征重要性、分类基线
+xgboost>=2.0             # 可选：小样本高维分类
+
+# ---- 可视化（分析报告） ----
+matplotlib>=3.8
+
+# ---- 配置与命令行 ----
+PyYAML>=6.0
+# click>=8.1

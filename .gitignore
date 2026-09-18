@@ -1,0 +1,33 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+
+# ---- 数据（大文件不入库） ----
+data/raw/*
+data/processed/*
+data/labeled/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/labeled/.gitkeep
+*.pcap
+*.pcapng
+
+# ---- 规则产物（可再生成） ----
+rules/*.yaml
+rules/*.json
+!rules/README.md
+
+# ---- 编辑器/系统 ----
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---- 日志/临时 ----
+*.log
+tmp/
